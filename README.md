@@ -13,7 +13,7 @@ A scrollable view that supports snapping.
 ```swift
 SnappingScrollView(.vertical) {
     //Header view
-        .snappingScrollAnchor(.bounds)
+        .scrollSnappingAnchor(.bounds)
             
     //Content views
 }
@@ -25,7 +25,7 @@ SnappingScrollView(.vertical) {
 * `showsIndicators`: A Boolean value that indicates whether the scroll view displays the scrollable component of the content offset, in a way suitable for the platform. The default value for this parameter is `true`.
 * `content`: The view builder that creates the scrollable view.
 
-## snappingScrollAnchor
+## scrollSnappingAnchor
 
 A function that sets the scroll snapping anchor rect for a view.
 
@@ -44,13 +44,13 @@ SnappingScrollView(.horizontal, decelerationRate: .fast) {
         ForEach(...) {
             //Page view
                 .padding(.trailing)
-                .snappingScrollAnchor(.bounds)
+                .scrollSnappingAnchor(.bounds)
         }
     }
 }
 ```
 
-`snappingScrollAnchor` should not be used on a child of a lazy view. Instead, use non-lazy parent views, and use `onVisible` to load data or update subviews when the view's bounds move into the visible frame. Provide `padding` to increase the distance from the visible frame that the `action` is called.
+`scrollSnappingAnchor` should not be used on a child of a lazy view. Instead, use non-lazy parent views, and use `onVisible` to load data or update subviews when the view's bounds move into the visible frame. Provide `padding` to increase the distance from the visible frame that the `action` is called.
 
 ## Requirements
 
